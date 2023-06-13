@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExceptionController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">phonenumbers</a> &gt; <a href="index.source.html" class="el_package">com.github.amarpreetbhatia.phonenumbers.controller</a> &gt; <span class="el_source">ExceptionController.java</span></div><h1>ExceptionController.java</h1><pre class="source lang-java linenums">package com.github.amarpreetbhatia.phonenumbers.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.NoSuchElementException;
+
+@RestControllerAdvice
+<span class="fc" id="L13">public class ExceptionController {</span>
+<span class="fc" id="L14">    private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class.getName());</span>
+
+    @ExceptionHandler(NoSuchElementException.class)
+    public ResponseEntity&lt;String&gt; handleException(NoSuchElementException ex) {
+<span class="nc" id="L18">        LOGGER.error(&quot;An error occurred in Phone Number REST API {}&quot;, ex.getMessage(), ex);</span>
+<span class="nc" id="L19">        String errorMessage = &quot;An error occurred: Record not found&quot;;</span>
+<span class="nc" id="L20">        return new ResponseEntity&lt;&gt;(errorMessage, HttpStatus.NOT_FOUND);</span>
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity&lt;String&gt; handleException(Exception ex) {
+<span class="nc" id="L25">        LOGGER.error(&quot;An error occurred in Phone Number REST API {}&quot;, ex.getMessage(), ex);</span>
+<span class="nc" id="L26">        String errorMessage = &quot;An error occurred: Due to Technical Reason&quot;;</span>
+<span class="nc" id="L27">        return new ResponseEntity&lt;&gt;(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
