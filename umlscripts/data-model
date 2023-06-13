@@ -1,0 +1,22 @@
+@startuml
+
+!define ENTITY_OMIT_FIELDS
+!define ENTITY_ATTRIBUTES
+
+package "Entities" {
+  class Customer {
+    - id: Long
+    - name: String
+  }
+
+  class PhoneNumber {
+    - id: Long
+    - number: String
+    - active: Boolean
+  }
+
+  Customer "1" -> "*" PhoneNumber : has
+
+}
+
+@enduml

@@ -1,0 +1,72 @@
+openapi: 3.0.1
+info:
+  title: Phone Numbers API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /api/phoneNumbers/{phoneNumber}/activate:
+    patch:
+      tags:
+        - phone-number-controller
+      operationId: activatePhoneNumber
+      parameters:
+        - name: phoneNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/phoneNumbers:
+    get:
+      tags:
+        - phone-number-controller
+      operationId: getAllPhoneNumbers
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PhoneNumberVO'
+  /api/phoneNumbers/customer/{customerId}:
+    get:
+      tags:
+        - phone-number-controller
+      operationId: getPhoneNumbersForCustomer
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PhoneNumberVO'
+components:
+  schemas:
+    PhoneNumberVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        mobileNumber:
+          type: string
+        customerId:
+          type: integer
+          format: int64
+        active:
+          type: boolean

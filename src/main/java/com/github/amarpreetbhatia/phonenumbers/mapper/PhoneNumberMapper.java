@@ -19,7 +19,9 @@ public class PhoneNumberMapper {
         phoneNumberVO.setId(phoneNumber.getId());
         phoneNumberVO.setNumber(phoneNumber.getNumber());
         phoneNumberVO.setActive(phoneNumber.getActive());
-        phoneNumberVO.setCustomerId(phoneNumber.getCustomer().getId());
+        if(phoneNumber.getCustomer() != null) {
+            phoneNumberVO.setCustomerId(phoneNumber.getCustomer().getId());
+        }
         return phoneNumberVO;
     }
 

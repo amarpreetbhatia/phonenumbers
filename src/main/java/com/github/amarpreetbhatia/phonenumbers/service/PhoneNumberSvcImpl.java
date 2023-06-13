@@ -8,10 +8,8 @@ import com.github.amarpreetbhatia.phonenumbers.repository.CustomerRepository;
 import com.github.amarpreetbhatia.phonenumbers.repository.PhoneNumberRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -41,6 +39,7 @@ public class PhoneNumberSvcImpl implements PhoneNumberSvc {
 
     @Override
     public List<PhoneNumberVO> getPhoneNumberByCustomerId(Long customerId) {
+        LOGGER.info("called getPhoneNumberByCustomerId for customerId {}", customerId);
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new NoSuchElementException("Customer not found"));
         List<PhoneNumber> phoneNumbers = phoneNumberRepository.findByCustomer(customer);
@@ -54,6 +53,7 @@ public class PhoneNumberSvcImpl implements PhoneNumberSvc {
     @Override
     @Transactional
     public void activatePhoneNumber(String number) {
+        LOGGER.info("called activatePhoneNumber for number {}", number);
         PhoneNumber phoneNumber = phoneNumberRepository.findByNumber(number);
         if(number == null) {
             LOGGER.info("no phone record found to activate the number");

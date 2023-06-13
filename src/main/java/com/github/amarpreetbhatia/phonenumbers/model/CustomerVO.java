@@ -1,9 +1,5 @@
 package com.github.amarpreetbhatia.phonenumbers.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.List;
 import java.util.Objects;
 

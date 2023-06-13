@@ -1,0 +1,35 @@
+@startuml
+
+!define SPRING_BOOT_ACTIVE
+!define SPRING_BOOT_VERSION 2.7
+
+actor User as User
+
+package "Phone Number API" {
+[PhoneNumberController] as PhoneNumberController
+[PhoneNumberService] as PhoneNumberService
+[CustomerRepository] as CustomerRepository
+[PhoneNumberRepository] as PhoneNumberRepository
+
+User --> PhoneNumberController : Requests API
+PhoneNumberController --> PhoneNumberService : Uses
+PhoneNumberService --> CustomerRepository : Uses
+PhoneNumberService --> PhoneNumberRepository : Uses
+}
+
+package "Database" {
+[H2] as H2
+
+CustomerRepository --> H2 : Manages
+PhoneNumberRepository --> H2 : Manages
+}
+
+
+package "Documentation" {
+[Swagger] as Swagger
+
+User --> Swagger : Accesses documentation
+PhoneNumberController --> Swagger : Generates specs
+}
+
+@enduml
