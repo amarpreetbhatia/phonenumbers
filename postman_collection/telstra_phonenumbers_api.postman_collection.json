@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "de7b9f20-e714-4f81-afd8-cde711679c4f",
+		"name": "telstra_phonenumbers_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27951487"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/phoneNumbers/customer/501",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/phoneNumbers/customer/501",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"phoneNumbers",
+						"customer",
+						"501"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/phoneNumbers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/phoneNumbers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"phoneNumbers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/phoneNumbers/061444444442/activate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/api/phoneNumbers/061444444442/activate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"phoneNumbers",
+						"061444444442",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
