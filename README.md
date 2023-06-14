@@ -9,14 +9,14 @@
 * Response: List of phone numbers.
 
 ## Get all phone numbers of a single customer
-* Endpoint: `/api/customers/{customerId}/phone-numbers`
+* Endpoint: `/api/phoneNumbers/customers/{customerId}`
 * Method: GET
 * Description: Retrieve all phone numbers associated with a specific customer.
 * Parameters: customerId - ID of the customer. 
 *  Response: List of phone numbers associated with the customer.
 
 ## Activate a phone number
-* Endpoint: `/api/phone-numbers/{phoneNumberId}/activate`
+* Endpoint: `/api/phoneNumbers/{phoneNumberId}/activate`
 * Method: POST
 * Description: Activate a phone number.
 * Path Parameter: Phone number to activate.
