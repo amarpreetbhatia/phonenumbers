@@ -1,3 +1,8 @@
+## Project Information
+
+This project is a **Phone Numbers REST API** built using **Spring Boot** with **JDK 17**. It provides a set of endpoints to manage phone numbers and their associations with customers. The application uses an in-memory **H2 database** for data storage and includes Swagger for API documentation.
+
+
 #### It is a Spring Boot application using JDK 17 and Spring Boot 2.7 version
 
 ### REST API Overview
