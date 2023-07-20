@@ -7,6 +7,13 @@ This project is a **Phone Numbers REST API** built using **Spring Boot** with **
 2. **Retrieve Phone Numbers by Customer**: Fetch all phone numbers associated with a specific customer.
 3. **Activate a Phone Number**: Update the status of a phone number to active.
 
+### Technical Details:
+- **Backend Framework**: Spring Boot 2.7
+- **Database**: H2 (in-memory)
+- **API Documentation**: Swagger UI
+- **Testing**: JUnit 5 and Mockito
+- **Build Tool**: Maven
+
 
 #### It is a Spring Boot application using JDK 17 and Spring Boot 2.7 version
 
