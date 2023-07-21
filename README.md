@@ -14,6 +14,11 @@ This project is a **Phone Numbers REST API** built using **Spring Boot** with **
 - **Testing**: JUnit 5 and Mockito
 - **Build Tool**: Maven
 
+### Usage:
+- The application provides RESTful endpoints for managing phone numbers.
+- It includes a Postman collection for testing the APIs.
+- Swagger UI is available for exploring the API documentation at `http://localhost:8080/swagger-ui.html`.
+
 
 #### It is a Spring Boot application using JDK 17 and Spring Boot 2.7 version
 
