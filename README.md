@@ -19,6 +19,9 @@ This project is a **Phone Numbers REST API** built using **Spring Boot** with **
 - It includes a Postman collection for testing the APIs.
 - Swagger UI is available for exploring the API documentation at `http://localhost:8080/swagger-ui.html`.
 
+### Diagrams:
+- **Data Model**: Represents the relationship between customers and phone numbers.
+- **Context Diagram**: Illustrates the interaction between the API, database, and external actors.
 
 #### It is a Spring Boot application using JDK 17 and Spring Boot 2.7 version
 
